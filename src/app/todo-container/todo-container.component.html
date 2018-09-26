@@ -1,0 +1,13 @@
+<div class="container">
+  <app-todo-form
+    (todoToAdd)="handleTodoToAdd($event)"
+    (requestToResetTodos)="handleRequestToResetTodos()"
+  ></app-todo-form>
+  
+  <app-todo-list
+    *ngIf="todos.length >0"
+    [todos] = "todos"
+  ></app-todo-list>
+
+  <p *ngIf="todos.length === 0">Vous n'avez aucun todo !</p>
+</div>

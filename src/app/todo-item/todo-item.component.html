@@ -1,0 +1,10 @@
+<div>
+  <h4 [ngClass]="{'todo-title--done': todo.isDone}">{{todo.title | uppercase}}</h4>
+  <div>
+    <input type="checkbox" id="todo_done" name="todo_done" 
+      [checked]="todo.isDone"
+      (change) = "handleCheckBoxChange(todo)"
+    />
+  </div>
+
+</div>

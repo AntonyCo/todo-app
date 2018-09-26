@@ -1,0 +1,12 @@
+<div class="form">
+  <label for="todo_title">Please enter a todo:</label>
+  <input name="todo_title" type="text" #inputTodo>
+  <button
+    (click) = "addTodoToContainer(inputTodo.value)"
+  >Submit</button>
+</div> 
+<div>
+  <button
+    (click) = "resetTodoList()"
+  >Reset</button>
+</div>
