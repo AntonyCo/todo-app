@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../model/Todo';
 
 @Component({
@@ -11,8 +11,22 @@ export class TodoItemComponent implements OnInit {
   @Input()
   todo:Todo;
   
+  @Output()
+  todoToDelete:EventEmitter<Todo> = new EventEmitter<Todo>();
+  handleDeleteTodo(todo:Todo){
+    this.todoToDelete.emit(todo);
+  }
+
+  @Output()
+  todoTitleClicked:EventEmitter<Todo> = new EventEmitter<Todo>();
+  handleClickOnTitle(todo){
+    this.todoTitleClicked.emit(todo);
+  }
+
+  @Output()
+  todoToCheck:EventEmitter<Todo> = new EventEmitter<Todo>();
   handleCheckBoxChange(todo:Todo){
-    todo.isDone = !todo.isDone;
+    this.todoToCheck.emit(todo);
   }
   constructor() { }
 

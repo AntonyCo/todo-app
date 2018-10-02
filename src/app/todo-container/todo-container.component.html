@@ -5,9 +5,12 @@
   ></app-todo-form>
   
   <app-todo-list
-    *ngIf="todos.length >0"
-    [todos] = "todos"
+    
+    [todos]="(todos$ | async)"
+    (todoToCheck)="handleRequestToCheckTodo($event)"
+    (todoToDelete)="handleRequestToDeleteTodo($event)"
+    (todoTitleClicked) = "handleClickOnTitle($event)"
   ></app-todo-list>
 
-  <p *ngIf="todos.length === 0">Vous n'avez aucun todo !</p>
+  
 </div>

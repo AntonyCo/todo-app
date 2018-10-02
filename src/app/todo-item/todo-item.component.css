@@ -1,10 +1,6 @@
 .todo-title--done{
     text-decoration: line-through;
 }
-.test{
-    color:red;
-}
-.item{
-    display:flex;
-    flex-direction: row;
+.title{
+    cursor: pointer;
 }

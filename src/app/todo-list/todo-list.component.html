@@ -4,5 +4,8 @@
 <div *ngFor="let todo of todos">
   <app-todo-item
     [todo] = "todo"
+    (todoToCheck)="handleRequestToCheckTodo($event)"
+    (todoToDelete)="handleRequestToDeleteTodo($event)"
+    (todoTitleClicked) = "handleClickOnTitle($event)"
   ></app-todo-item>
 </div>

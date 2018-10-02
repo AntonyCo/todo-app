@@ -11,7 +11,6 @@ export class TodoFormComponent implements OnInit {
 
   @Output()
   todoToAdd:EventEmitter<Todo> = new EventEmitter<Todo>();
-
   addTodoToContainer(value) {
     const todo:Todo = new Todo(value, false);
     this.todoToAdd.emit(todo);
@@ -19,7 +18,6 @@ export class TodoFormComponent implements OnInit {
   
   @Output()
   requestToResetTodos:EventEmitter<string> = new EventEmitter<string>();
-
   resetTodoList(){
     this.requestToResetTodos.emit();
   }
